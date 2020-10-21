@@ -1,0 +1,423 @@
+body .visual{ margin-top: 95px; }
+#main {overflow-x: hidden; }
+
+::selection{ background-color: #f26222; color: white;}
+#instagramWidgetManual::selection {  background-color: #f26222; color: white;}
+/* 접속시 화면 가득찬 팝업 띄우기 */
+.ofyS { overflow-y : hidden !important }
+#workIntroduce{ position: fixed; top:0; left: 0; right: 0; bottom:0;
+                z-index: 1000000000; background-color: rgba(0,0,0,.8)}
+.workIn_content_wrap { position: absolute; width: calc(100% - 30px);
+                       margin: auto; left: 0; right: 0; bottom: 0; top:50%;
+                       max-width: 1000px; transform: translateY(-50%);
+                       min-width: 870px; min-height: 450px;
+                       background-color: white; line-height: 30px;
+                       text-align: center; color: black;
+                      /* 부모 높이보다 작을 때는 top:50%; transform: translateY(-50%);
+                      부모 높이보다 클 때는 스크롤 터지도록 top:0; width: calc(100% - 30px); overflow-y: auto;
+                      부모 높이보다 클 때는 스크롤 터지도록2 : better way
+                      top:0; max-width: calc(100% - 30px); max-height: calc(100% - 30px); */
+                    }
+.workIn_content_wrap h4 { font-size: 20px; font-weight: lighter; padding: 40px; }
+.workIn_content_wrap button {
+  position: absolute; top:5%; right: 5%;
+  color: #222;
+  font-size: 20px; font-weight: bolder;
+  border-radius: 10%;
+}
+.popContents { position: relative;}
+.popLeft, .popRight { position: absolute; }
+
+.popRight {
+  right: 8%;
+  overflow-y: scroll;
+  width: 400px; height: 290px;
+  background-color: #eee;
+}
+.LeftLinks{ float: left; }
+.LeftRechts{ float: right; text-align: left; padding: 0 25px;}
+.popLeft:after{ content: ""; display: block; clear: both;}
+.popLeft { left: 8%;}
+.popLeft img{ width: 150px;}
+.popLeft .popSns img { width: 30px; padding: 10px;}
+.popLeft h5 { font-size: 25px; padding: 10px;}
+.popRight img{ width: 100%; }
+
+.popSns { padding: 10px 0; }
+.sns_inskaka, .sns_phones { display: block;}
+
+
+/* 스크롤바 꾸미기 */
+.popRight::-webkit-scrollbar {
+  width: 20px;
+}
+.popRight::-webkit-scrollbar-thumb {
+  background-color: #222;
+}
+.popRight::-webkit-scrollbar-track {
+  background-color: #eee;
+}
+
+
+/*헤더*/
+#header{ position: fixed; top:0; left: 0; right: 0; z-index: 10000000;
+         background-color: white; border-bottom: none;
+	     transition: 0.5s;
+        }
+/*커뮤니티*/
+#header .xans-layout-boardinfo{ position: relative; }
+#header .xans-layout-boardinfo li{ padding: 5px; }
+
+/*#header .borderBox{ position: absolute; display: none;}*/
+#header .borderBox{ position: absolute; background:  white;
+	               border: 1px solid #eee;
+                   line-height:18px; text-align: center;
+	               box-shadow: 2px 3px 5px rgba(0,0,0,.3);
+                   width: 150%; }
+#header .xans-layout-boardinfo:hover .borderBox{ display: block; }
+
+
+/*스크롤 헤더 스타일*/
+#header.scroll{ top:-35px; background-color: rgba(255,255,255,0.50);
+              }
+#header.scroll #navi > li{  }
+#header.scroll .xans-layout-logotop a{ font-size: 22px; }
+#header.scroll .couponWrap{ visibility: hidden; }
+
+
+/*community borderBox*/
+#header .borderBox{ display:  none; }
+
+/*국기*/
+#header .xans-layout-multishoplist.thumb > ul li a img{ width: 20px; }
+
+
+/*GNB*/
+#navi{ width: 66.666%;}
+#navi > li{ position: relative; margin: 0 15px; font-size: 20px; }
+#navi > li:hover{ text-decoration: none; }
+#navi > li:hover a{ text-decoration: none; }
+#header .xans-layout-category .position > ul > li:hover > a{ color: #f26222}
+
+
+/*상품분류*/
+#navi > li:hover #category{ display: block; }
+#category{ position: absolute; background: white;
+		   border: 1px solid #eee; padding: 15px 10px;
+	       z-index: 1000;
+		   width: 400px; display: none; }
+#category .position > ul > li > a{ font-weight: normal; font-size: 14px;
+	                               padding:0;  line-height: 2em;
+	                               text-align: left;
+                                 }
+#category:after{ content: url(/layout/gyk/img/shop_thumb.jpg);
+	             display: block; position: absolute;
+	             right: 10px; top:10px; bottom: 10px;
+	             width: 300px; border: 1px solid #eee; }
+
+
+/*좌우배치*/
+.leftCon{ float: left; }
+.rightCon{ float: right; }
+.leftCon , .rightCon { font-size:13px; }
+
+/*좌우배치 자식노드 옆으로 배열*/
+.leftCon > *,
+.rightCon > *{ display: inline-block; }
+.leftCon{}
+
+#header .xans-layout-statelogon > a.extraMenu,
+#header .xans-layout-statelogon .myinfo,
+#header .xans-layout-info h2{ display: none; }
+#header .xans-layout-statelogon > a{background: none;}
+#header .xans-layout-statelogon{line-height: 35px; float: left;
+	                            height: 35px; margin: 0 30px;}
+
+#header .xans-layout-statelogoff > a.extraMenu,
+#header .xans-layout-statelogoff .myinfo,
+#header .xans-layout-info h2{ display: none; }
+#header .xans-layout-statelogoff > a{background: none;}
+#header .xans-layout-statelogoff{line-height: 35px; float: left;
+	                            height: 35px; margin: 0 30px;}
+
+#header .xans-layout-statelogon > a{padding: 0 4px 0 30px; font-size: 13px;}
+#header .xans-layout-statelogon > a .count{ left: 1px; }
+#header .xans-layout-statelogon > a .count span { background: none; }
+#header .xans-layout-statelogon > a .count{ background: none; background-color: #f26222; border-radius: 10px; }
+
+
+/*검색폼*/
+
+#header .xans-layout-searchheader{ margin: 3px 0; padding: 3px; border-radius: 50%;
+                                   background-color: #f26222; }
+#header .xi-magnifier{ color: white; font-size: 1.5em}
+
+
+/*로고 및 헤더 파트*/
+#header .xans-layout-boardinfo > .borderbox{ height: auto; z-index: 1001}
+#header .xans-layout-multishoplist.thumb{ position: relative; top: 5px; vertical-align: middle; }
+#header .topArea{ clear: both; height: auto; padding: 0; text-align: left;
+                  display: table; width: 100%;
+                }
+#header .xans-layout-logotop{ width: 200px;
+	                          display: table-cell;
+                            vertical-align: middle;
+                            padding-top: 5px;
+                           }
+#header .xans-layout-logotop a{ font-size: 0; line-height: 0;}
+#navi {display: table-cell; text-align: center; }
+#navi > li{display: inline-block; vertical-align: middle; line-height: 53px; }
+#header .topArea > a{display: table-cell; text-align: right; }
+#header .topArea > a:after{font-family: 'xi-download' ;}
+#header::after{ display: none; }
+
+#header #topLeft{ border:none; vertical-align: middle; }
+#header #topLeft li { display: inline-block; line-height: 30px; transition: 0.4s;}
+#header #topLeft li a:hover { color: #f26222;}
+#header #topLeft > li { padding-right: 30px; }
+
+#navi > li { margin: 0 25px; }
+#navi li a{ font-size: 17px; font-family: 'Titillium Web', sans-serif; font-weight: 400; }
+
+/*검색폼의 클릭시 디자인*/
+#header .xans-layout-searchheader #kgy_searchBoxDiv fieldset{ border-bottom: 1px solid #f26222; }
+
+
+/*선생님 버전 헤더 수정*/
+
+#header .xans-layout-info,
+#header .xans-layout-boardinfo {margin:0; padding: 0;
+								border-bottom: 0;
+                               }
+
+
+/*진짜중요한거-html에 실재하는 공백을 채워주고 display block까지 해주기*/
+#header .xans-layout-multishoplist.thumb > ul li a,
+#header .xans-layout-multishoplist.thumb > ul li a img{ display: block;}
+
+
+
+/*3천원 쿠폰이벤트*/
+#header .couponWrap{ width: 220px; padding:6px;
+                     border-radius: 50px; position: absolute;
+                     background-color: white; border: 1px solid #f26222;
+                     text-align: center; top: 52px; }
+#header .couponEvent,
+#header .couponEvent a{ color: #f26222; font-size: 12px; }
+
+/*검색창 나오게 팝업-선생님 도움-엄마태그의relative포지션 그대로 두고(레이아웃 깨짐현상때문에) fixed 넣는 버전 */
+/*
+#header .xans-layout-searchheader{  float:none; margin:0 }
+.absWhite{ position:fixed; left:0; right:0; top:122px;
+	       background:white; padding:20px; z-index: 100000;
+	       display: none;
+}
+#header .xans-layout-searchheader .xi-magnifier{ color: #222; margin-left:-35px; line-height: 35px;
+                                                 }
+#header .xans-layout-searchheader fieldset{ max-width:600px; margin:0 auto; border:0; border-bottom:1px solid #222}
+#header .xans-layout-searchheader #keyword {
+    width: calc(100% - 50px);
+}
+*/
+
+/*검색창 나오게 팝업-수업내용-엄마태그의 relative포지션 지우고 absolute 넣는 버전*/
+
+
+
+#kgy_searchBoxDiv{ position: absolute;
+	               left: 0; right: 0;
+	               background: white;
+	               top: 98px; z-index: 10000;
+	               padding: 30px;
+	               display: none; }
+/*#header .scroll #kgy_searchBoxDiv{ margin-top: -100000px;}*/
+.xans-layout-searchheader #kgy_searchBoxDiv fieldset{ max-width: 600px; margin: 0 auto;
+	                                                  border: 0; border-radius: 0;
+                                                      border-bottom: 2px solid #222; }
+.xans-layout-searchheader #kgy_searchBoxDiv #keyword{ width: calc(100% - 60px); }
+
+
+/* WRAP 최하단의 자유게시판, 상품 Q&A- 잠시만 안보이도록*/
+#wrap #boardArea{ display: none; }
+
+
+
+/*퀵*/
+#main #quick { position:fixed; top:unset !important;
+	       bottom: 20px; right:20px;
+         z-index: 10000000;
+         background-color:white;
+         color: black;
+         border: 2px solid black;
+         font-weight: bold
+       }
+.quickCover {position: relative; }
+#main #quick .xans-layout-productrecent{
+  float: left; overflow: hidden;
+  border: 0;
+  margin: 8px 20px;
+ }
+#quick .xans-layout-productrecent { margin: 0;}
+#quick h2{
+  float: left;
+  text-align: center;
+  line-height: 50px;
+  border-left: 2px solid black;
+}
+
+#quick .xans-layout-productrecent .player .prev,
+#quick .xans-layout-productrecent .player .next{ position: absolute; display: inline-block;
+	                                               font-size: 14px; font-weight: bold;}
+#quick .xans-layout-productrecent .player a:first-child{
+  left: 10px; transform: translateY(10px);
+}
+#quick .xans-layout-productrecent .player a:last-child{
+  top: 18px; transform: translateX(-8px);
+}
+
+#quick .xans-layout-productrecent > ul{ display: table; float: left; margin: 0;}
+#quick .xans-layout-productrecent .player{ float: left; }
+#quick .xans-layout-productrecent .player a{ display: block; }
+#quick .xans-layout-productrecent > ul > li{ display: table-cell; }
+#quick .pageTop { display: block; background-color: black;
+	                text-align: center;
+                  line-height: 50px; }
+#quick .pageTop a{ color: white;}
+#quick .xans-layout-productrecent li img {
+  max-width: 30px;
+  position: relative;
+ }
+
+
+
+/*배너*/
+#wrap #contents{float: none; width:auto;}
+
+/* 띠배너-회원가입 등 */
+#main #container { width: auto; }
+#main #contents { float: none; width: 1280px; margin: 0 auto; }
+
+/*배너-인디케이터*/
+
+.visual .smart-banner-bx-wrapper .bx-pager{ text-align: left; left: 18%; }
+
+/*메인 상품 진열 타이틀 부분*/
+
+#wrap .ec-base-product .title { padding: 50px;}
+
+#wrap .ec-base-product .title h2 span:first-child{ border-top: 2px solid #222; font-size:40px; }
+
+#wrap .ec-base-product .title  h2 p { font-family:'Titillium Web', sans-serif; font-weight: lighter;
+                                      font-size:22px;   color:#222;  margin-top: 50px;
+                                      }
+
+
+
+/* 인스타그램 instagram */
+
+#wrap #instagramWidgetManual { padding: 50px 0;}
+
+
+.xans-product-listmain .prdList{ font-family: 'Nanum Gothic', sans-serif; }
+/*메인상품리스트 li들 (중요중요)*/
+.xans-product-listmain .prdList > li{ position: relative; box-sizing: border-box;
+	                                  padding: 0 15px; cursor: pointer; }
+/*메인상품리스트 테두리라인*/
+.xans-product-listmain .prdList > li:after{ content: ""; display: block;
+	                                          position: absolute; left: 10px; right: 10px;
+                                            top:0; bottom: 0; border:2px solid #eee;}
+
+/*메인상품리스트들 이미지 외 상품정보 구분선*/
+.ec-base-product.xans-product-listmain .prdList .thumbnail .icon{ margin-left: -11px; margin-right: -11px; }
+/*장바구니, 찜하기 버튼(위시리스트) 간격*/
+.xans-product-listmain .prdList > li .overIcon span{ margin : 5px; }
+.xans-product-listmain-2 .prdList > li:first-child .overIcon { padding-top: 140px; }
+/*장바구니, 찜하기 버튼(위시리스트) 레이아웃*/
+.xans-product-listmain .prdList > li .overIcon{ position: absolute; display: none;
+	                                              text-align: center; z-index: 10001;
+                                                top:80%; left: 80%; transform: translate(-50%,-50%);}
+.xans-product-listmain .prdList > li .overIcon span img { width: 40px;}
+/*메인상품리스트 반투명커튼*/
+.xans-product-listmain .prdList > li::before{ content: ""; background: rgba(0,0,0,.2);
+                      	                                         position: absolute;
+                                                                   top:0; left: 10px; right: 10px;
+                      	                                         bottom: 0; z-index: 10002;
+                      	                                         display: none;
+                                                                  }
+
+.xans-product-listmain .prdList > li:hover::before,
+.xans-product-listmain .prdList > li:hover .overIcon { display: block; }
+.xans-product-listmain-1.ec-base-product .prdList .thumbnail .wish,
+.xans-product-listmain-2.ec-base-product .prdList .thumbnail .wish{ position: relative; right: 0; bottom: 0; }
+
+/* 베스트셀러 가상선택자 */
+.xans-product-listmain-1 .prdList > li > .thumbnail:before {  position: absolute; top: 15px; left: 15px; z-index: 1000000; }
+.xans-product-listmain-1 .prdList > li:nth-child(1) .thumbnail:before { content: url(/layout/gyk/img/best1.png);}
+.xans-product-listmain-1 .prdList > li:nth-child(2) .thumbnail:before { content: url(/layout/gyk/img/best2.png);}
+.xans-product-listmain-1 .prdList > li:nth-child(3) .thumbnail:before { content: url(/layout/gyk/img/best3.png);}
+
+
+/*선생님 버전 메인상품 레이아웃*/
+
+.xans-product-listmain-2 .prdList{ position: relative; text-align: center; }
+.xans-product-listmain-2 .prdList > li { position: absolute; width: 25%; }
+.xans-product-listmain-2 .prdList > li:nth-child(1){ position: relative; width: 50%; min-height: 700px; }
+
+.xans-product-listmain-2 .prdList > li:nth-child(2){ top: 0; left: 0; }
+.xans-product-listmain-2 .prdList > li:nth-child(3){ bottom: 0; left: 0; }
+.xans-product-listmain-2 .prdList > li:nth-child(4){ right: 0; top: 0; }
+.xans-product-listmain-2 .prdList > li:nth-child(5){ right: 0; bottom: 0; }
+
+.xans-product-listmain-2 .prdList > li:nth-child(1) .thumbnail:before{
+  content: url(/layout/gyk/img/onepone.png);
+  position: absolute; top: 15px; left: 15px; z-index: 1000000; width: 150px;
+}
+.xans-product-listmain-2 .prdList > li:not(:nth-child(1)) .description ul > li:nth-child(4){ height: 0; padding: 0; overflow: hidden; }
+
+#wrap .xans-product-listmain-2 .prdList > li:after{ border:none; }
+
+
+
+/* 메인상품 리스트 설명 */
+#wrap .ec-base-product .title h2 p { margin-top: 10px; }
+.xans-product .spec li {  line-height: 25px; }
+
+.xans-product-listmain .prdList .description .spec > li:nth-child(2) { display: none; }
+.ec-base-product .prdList .description .name a span { font-weight: bold; font-size: 25px; }
+.xans-product .spec li span { font-size: 20px; }
+
+
+/*푸터*/
+
+#footer{ background-color: white; border-bottom: 0; font-size: 13px; }
+#footer .inner{ text-align: center; margin: 0 auto; padding: 100px 0 50px; }
+
+#footer .xans-layout-footer .hosting{ visibility: hidden; }
+#footer .xans-layout-footer { display: table; transform: translateX(-10%);
+	                           }
+#footer .xans-layout-footer .utilMenu{ position: absolute; margin-top: -95px;
+                                       left: 50%; transform: translateX(-50%);
+                                       border-bottom: 1px solid #ccc}
+#footer .xans-layout-footer .utilMenu li{ background:none; }
+
+#footer .xans-layout-info,
+#footer .address,
+#footer .ft_right{ display: table-cell; border: none; line-height: 30px;
+                   vertical-align: top; width: 33.333%; margin: 0 30px;
+                   padding: 0; }
+#footer h2 { padding-bottom: 25px;
+             font-size: 17px; font-weight: bolder; color: #222}
+#footer .xans-layout-info h2 { height: 30px; }
+#footer .address{ padding: 0;}
+#footer .address strong{ display: block; }
+
+#footer .xans-layout-info strong,
+#footer .xans-layout-info span,
+#footer .address strong,
+#footer .address > span{ color: #222; display: block; }
+
+#footer:before,
+#footer:after{ display: none; }
+
+#footer .ft_sns img { width: 30px; height: 30px; padding: 5px; }
+#footer .ft_sns > a { display: inline-block; }
